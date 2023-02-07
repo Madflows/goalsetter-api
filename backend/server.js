@@ -9,6 +9,7 @@ const { errorHandler } = require("./middleware/errorMiddleware");
 connectDB()
 
 const goalRoutes = require("./routes/goalRoutes");
+const userRoutes = require("./routes/userRoutes")
 
 const app = express();
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use(
 );
 
 app.use("/api/goals", goalRoutes);
+app.use("/api/users", userRoutes)
 
 app.use(errorHandler);
 
